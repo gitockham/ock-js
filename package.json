@@ -1,7 +1,7 @@
 {
-  "name": "arkjs",
+  "name": "ock-js",
   "version": "0.2.1",
-  "description": "JavaScript library for sending Ark transactions from the client or server",
+  "description": "JavaScript library for sending OCKHAM transactions from the client or server",
   "main": "index.js",
   "engines": {
     "node": ">=4"
@@ -12,7 +12,7 @@
     "build:docs": "jsdoc -c jsdoc.json",
     "clean:docs": "shx rm -r ./docs",
     "lint": "eslint .",
-    "test": "mocha test/ark.js test/*/*"
+    "test": "mocha test/ock.js test/*/*"
   },
   "directories": {
     "doc": "./doc",
@@ -21,12 +21,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArkEcosystem/ark-js.git"
+    "url": "git+https://github.com/gitockham/ock-js.git"
   },
-  "homepage": "https://github.com/ArkEcosystem/ark-js",
+  "homepage": "https://github.com/gitockham/ock-js",
   "keywords": [
     "api",
-    "ark",
+    "ock",
     "blockchain",
     "client",
     "cryptocurrency",
@@ -34,12 +34,13 @@
     "server",
     "transaction"
   ],
-  "bugs": "https://github.com/ArkEcosystem/ark-js/issues",
+  "bugs": "https://github.com/gitockham/ark-js/issues",
   "contributors": [
     "FX Thoorens <fx@ark.io>",
     "Guillaume Verbal <doweig@ark.io>",
     "Boris Povod <boris@crypti.me>",
-    "Oliver Beddows <oliver@lisk.io>"
+    "Oliver Beddows <oliver@lisk.io>",
+    "Luc Talarico <ceo@ockham.consulting>"
   ],
   "license": "MIT",
   "dependencies": {

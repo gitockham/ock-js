@@ -1,10 +1,10 @@
 var Buffer = require("buffer/").Buffer;
 var should = require("should");
-var ark = require("../../index.js");
+var ock = require("../../index.js");
 
 describe("signature.js", function () {
 
-  var signature = ark.signature;
+  var signature = ock.signature;
 
   it("should be ok", function () {
     (signature).should.be.ok;
@@ -33,7 +33,7 @@ describe("signature.js", function () {
     });
 
     it("should create signature transaction", function () {
-      var secretKey = ark.ECPair.fromSeed("secret");
+      var secretKey = ock.ECPair.fromSeed("secret");
       secretKey.publicKey = secretKey.getPublicKeyBuffer().toString("hex");
 
       sgn = createSignature(secretKey, "second secret");
@@ -59,7 +59,7 @@ describe("signature.js", function () {
     });
 
     it("should be deserialised correctly", function () {
-      var deserialisedTx = ark.crypto.fromBytes(ark.crypto.getBytes(sgn).toString("hex"));
+      var deserialisedTx = ock.crypto.fromBytes(ock.crypto.getBytes(sgn).toString("hex"));
       delete deserialisedTx.vendorFieldHex;
       var keys = Object.keys(deserialisedTx)
       for(key in keys){

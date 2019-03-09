@@ -1,11 +1,11 @@
 var Buffer = require("buffer/").Buffer;
 var should = require("should");
-var ark = require("../../index.js");
+var ock = require("../../index.js");
 var constants = require("../../lib/constants.js");
 
 describe("multisignature.js", function () {
 
-  var multisignature = ark.multisignature;
+  var multisignature = ock.multisignature;
 
   it("should be ok", function () {
     (multisignature).should.be.ok;
@@ -35,10 +35,10 @@ describe("multisignature.js", function () {
     });
 
     it("should create multisignature transaction from keys", function () {
-      var secretKey = ark.ECPair.fromSeed("secret");
+      var secretKey = ock.ECPair.fromSeed("secret");
       secretKey.publicKey = secretKey.getPublicKeyBuffer().toString("hex");
 
-      var secondSecretKey = ark.ECPair.fromSeed("second secret");
+      var secondSecretKey = ock.ECPair.fromSeed("second secret");
       secondSecretKey.publicKey = secondSecretKey.getPublicKeyBuffer().toString("hex");
 
       sgn = createMultisignature(secretKey, secondSecretKey, keysgroup, 255, 2);
@@ -70,7 +70,7 @@ describe("multisignature.js", function () {
 
     it("should be deserialised correctly", function () {
       sgn = createMultisignature('secret key', 'second secret key', keysgroup, 255, 2);
-      var deserialisedTx = ark.crypto.fromBytes(ark.crypto.getBytes(sgn).toString("hex"));
+      var deserialisedTx = ock.crypto.fromBytes(ock.crypto.getBytes(sgn).toString("hex"));
       delete deserialisedTx.vendorFieldHex;
       var keys = Object.keys(deserialisedTx)
       for(key in keys){
